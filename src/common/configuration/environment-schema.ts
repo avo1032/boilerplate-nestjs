@@ -11,6 +11,7 @@ export interface EnvironmentVariables {
     PASSWORD: string;
     NAME: string;
   };
+  SAMPLE_SERVER_ADDR: string;
 }
 
 export const getEnvConfig = () => ({
@@ -24,6 +25,7 @@ export const getEnvConfig = () => ({
     PASSWORD: process.env.DATABASE_PASSWORD,
     NAME: process.env.DATABASE_NAME,
   },
+  SAMPLE_SERVER_ADDR: process.env.SAMPLE_SERVER_ADDR,
 });
 
 export const environmentSchema = Joi.object({
@@ -37,4 +39,5 @@ export const environmentSchema = Joi.object({
     PASSWORD: Joi.string().required(),
     NAME: Joi.string().required(),
   },
+  SAMPLE_SERVER_ADDR: Joi.string().required(),
 });
