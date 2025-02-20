@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { SampleService } from './sample.service';
-import { SampleIdReqDto, SampleReqBodyDto } from './dto/sample-req.dto';
-import { Sample } from './entity/sample.entity';
+import { SampleService } from '../service/sample.service';
+import { SampleIdReqDto, SampleReqBodyDto } from '../dto/sample-req.dto';
+import { Sample } from '../entity/sample.entity';
 
 @Controller('samples')
 export class SampleController {

@@ -8,14 +8,18 @@ import { DeepPartial } from 'typeorm';
 export class SampleRepository {
   constructor(
     @InjectRepository(Sample)
-    private readonly sampleRepository: Repository<Sample>,
+    private readonly repository: Repository<Sample>,
   ) {}
 
+  async getRepository(): Promise<Repository<Sample>> {
+    return this.repository;
+  }
+
   async findOneByPk(id: number): Promise<Sample | null> {
-    return this.sampleRepository.findOneBy({ id });
+    return this.repository.findOneBy({ id });
   }
 
   async save(saveOptions: DeepPartial<Sample>): Promise<Sample> {
-    return this.sampleRepository.save(saveOptions);
+    return this.repository.save(saveOptions);
   }
 }

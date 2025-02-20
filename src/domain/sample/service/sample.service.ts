@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { SampleRepository } from './repository/sample.repository';
-import { Sample } from './entity/sample.entity';
+import { SampleRepository } from '../repository/sample.repository';
+import { Sample } from '../entity/sample.entity';
 
 @Injectable()
 export class SampleService {
